@@ -21,7 +21,7 @@ CACHED_DOWNLOAD="${HOME}/cache/sc-${SAUCE_VERSION}-linux.tar.gz"
 
 mkdir -p "${SAUCE_DIR}"
 rm -f "${SAUCE_DIR}/sc_ready"
-wget --continue --output-document "${CACHED_DOWNLOAD}" "https://saucelabs.com/downloads/sc-${SAUCE_VERSION}-linux.tar.gz"
+wget --output-document "${CACHED_DOWNLOAD}" "https://saucelabs.com/downloads/sc-${SAUCE_VERSION}-linux.tar.gz"
 tar -xaf "${CACHED_DOWNLOAD}" --strip-components=1 --directory "${SAUCE_DIR}"
 
 ${SAUCE_DIR}/bin/sc -u "${SAUCE_USER}" -k "${SAUCE_API_KEY}" -f "${SAUCE_DIR}/sc_ready" 2>&1 &
